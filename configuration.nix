@@ -96,6 +96,19 @@
    ];
 # Nix Flakes lol
  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+# Nix Garbage, System for Gc
+  nix = {
+    settings.auto-optimise-store = true;
+
+    gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 14d"
+      };
+    };
+  }
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
