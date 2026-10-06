@@ -92,6 +92,7 @@
      kdePackages.dolphin
      git
      brightnessctl
+     bat
    ];
 # Nix Flakes lol
  nix.settings.experimental-features = [ "nix-command" "flakes" ];
